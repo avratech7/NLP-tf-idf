@@ -4,7 +4,7 @@ from get_data import get_clean_data
 
 def run():
 
-	messagebox.showinfo('The Label', get_clean_data[2])
+	messagebox.showinfo('The Label', get_clean_data(urlinp.get(),labelinp.get())[2])
 	urlinp.delete ( 0, END )
 	labelinp.delete(0, END)
 
