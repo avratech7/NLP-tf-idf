@@ -9,6 +9,9 @@ def run():
 	labelinp.delete(0, END)
 
 
+def create_db():
+	print('create_db')
+
 root = Tk()
 root.configure(bg='black')
 root.title('NLP Avratech7')
@@ -35,6 +38,7 @@ passowrdt = Entry(root, fg='red', show="*")
 passowrdt.grid(row=3, column=1)
 passowrdt.insert(10,'iP6W0C7_-6rsUI9dK7JN7WI6qxPVEx-q')
 
+create_db = Button(root, text='Create DB\nfirst time\nonly',bg='green', command=create_db,width=10,height=5).grid(row=0, column=2,rowspan=4)
 
 
 url = Label(root, text='URL', bg='black', fg='red').grid(row=4, column=0)
