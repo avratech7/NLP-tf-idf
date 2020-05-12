@@ -137,8 +137,8 @@ def finding_label_of_new_file(new_string, list_of_all_documents):
     :param list_of_all_documents:a list [[text,label][text,label]]
     :return:
     '''
-    num_of_sport_score = 0
-    num_of_medicine_score = 0
+    num_of_sport_score = 0.1
+    num_of_medicine_score = 0.1
     creating_list_of_new_document_terms_and_values(parsing_new_string_to_list(new_string), new_string,
                                                    list_of_all_documents)
     list_of_all_documents.append(new_string)
@@ -153,6 +153,7 @@ def finding_label_of_new_file(new_string, list_of_all_documents):
     print(num_of_sport_score)
     print(num_of_medicine_score)
     new_text_subject = ""
+
     if num_of_sport_score/num_of_medicine_score > 1.3:
         new_text_subject = "sport"
     elif num_of_medicine_score/num_of_sport_score >1.3:

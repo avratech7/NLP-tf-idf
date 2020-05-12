@@ -4,18 +4,21 @@ from get_data import get_clean_data
 import query_doc
 from find_tf_idf_cooper import *
 def run():
+	s = get_clean_data(urlinp.get(),labelinp.get())
 	if(labelinp.get() == ''):
-		 s = get_clean_data(urlinp.get(),labelinp.get())[1]
+		 
 		
-		 messagebox.showinfo('The Label', 'The label of this docoment is:\n' + finding_label_of_new_file([' '.join(s),''],query_doc.get_docs()))
+		 messagebox.showinfo('The Label', 'The label of this docoment is:\n' + finding_label_of_new_file([' '.join(s[1]),''],query_doc.get_docs()))
 	else:
+		for i in s[1]:
 
-		query_doc.save_docs_into()
+			query_doc.save_docs_into(i,s.label)
 
 
-		messagebox.showinfo('The Label', 'The label of this docoment is:\n' + str(get_clean_data(urlinp.get(),labelinp.get())[1]))
-		urlinp.delete ( 0, END )
-		labelinp.delete(0, END)
+
+			messagebox.showinfo('The Label', 'saved')
+			urlinp.delete ( 0, END )
+			labelinp.delete(0, END)
 
 
 def create_db():
