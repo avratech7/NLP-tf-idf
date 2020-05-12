@@ -5,18 +5,13 @@ import query_doc
 from find_tf_idf_cooper import *
 def run():
 	s = get_clean_data(urlinp.get(),labelinp.get())
-	if(labelinp.get() == ''):
-		 
-		
-		 messagebox.showinfo('The Label', 'The label of this docoment is:\n' + finding_label_of_new_file([' '.join(s[1]),''],query_doc.get_docs()))
+	if(labelinp.get() == ''):		
+		 messagebox.showinfo(finding_label_of_new_file([' '.join(s[1]),''],query_doc.get_docs()))
+		 urlinp.delete ( 0, END )
 	else:
 		for i in s[1]:
-
 			query_doc.save_docs_into(i,s.label)
-
-
-
-			messagebox.showinfo('The Label', 'saved')
+			messagebox.showinfo('The Label', 'Saved')
 			urlinp.delete ( 0, END )
 			labelinp.delete(0, END)
 
